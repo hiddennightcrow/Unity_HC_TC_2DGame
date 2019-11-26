@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,7 +6,7 @@ public class GameManager : MonoBehaviour
     public int score;
     [Header("最佳分數")]
     public int bestscore;
-    [Header("水管群組" )]
+    [Header("水管群組")]
     public GameObject pipe;//GameObject可以存取場景上的物件也可以存取專案內的預知物
 
     private void AddScore(int add = 1)
@@ -23,11 +22,15 @@ public class GameManager : MonoBehaviour
     }
     private void SpawnPipe()
     {
-        GameObject.Instantiate(pipe);
+
+        Vector3 pos = new Vector3(6, Random.Range(-0.7f,2f), 0);
+        GameObject.Instantiate(pipe,pos,Quaternion.identity);
     }
     private void Start()
     {
-        SpawnPipe();
-        SpawnPipe();
+        
+        InvokeRepeating("SpawnPipe", 0, 1.5f);
     }
 }
+
+  

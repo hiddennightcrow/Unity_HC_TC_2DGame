@@ -4,7 +4,7 @@ using UnityEngine;
 public class Floor : MonoBehaviour
 {
     [Header("速度") ,Range(0f, 10f)]
-    public float speed =1.5f;
+    public float speed =2f;
     public Transform floor;
     private void Update()
     {
