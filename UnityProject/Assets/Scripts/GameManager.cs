@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     public int bestscore;
     [Header("水管群組")]
     public GameObject pipe;//GameObject可以存取場景上的物件也可以存取專案內的預知物
+    [Header("結束畫面")]
+    public GameObject goFinal;
+   
+
 
     private void AddScore(int add = 1)
     {
@@ -17,8 +21,9 @@ public class GameManager : MonoBehaviour
     {
 
     }
-    private void GameOver()
+   public void GameOver()
     {
+        goFinal.SetActive(true);
     }
     private void SpawnPipe()
     {
