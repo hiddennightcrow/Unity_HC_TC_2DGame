@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour
    
 
 
-    private void AddScore(int add = 1)
+    public void AddScore(int add = 1)
     {
-
+        print("加分");
     }
     private void SetHightScore()
     {
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
    public void GameOver()
     {
         goFinal.SetActive(true);
+        CancelInvoke("SpawnPipe");//取消調用("方法名稱")
     }
     private void SpawnPipe()
     {

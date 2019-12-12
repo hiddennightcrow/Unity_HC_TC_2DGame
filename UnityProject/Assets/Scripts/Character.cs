@@ -27,7 +27,19 @@ public class Character : MonoBehaviour
     //觸發開始事件:碰撞開始事件:物件碰撞開始執行一次
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Dead();
+        if (collision.gameObject.name == "水管" || collision.gameObject.name == "水管(1)")
+        {
+            Dead();
+
+        }
+     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "通過")
+        {
+            gm.AddScore();
+
+        }
     }
     private void Jump()
     {
