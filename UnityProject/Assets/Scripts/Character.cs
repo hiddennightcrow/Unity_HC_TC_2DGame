@@ -27,7 +27,7 @@ public class Character : MonoBehaviour
     //觸發開始事件:碰撞開始事件:物件碰撞開始執行一次
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "水管" || collision.gameObject.name == "水管(1)")
+        if (collision.gameObject.name == "水管" || collision.gameObject.name == "水管 (1)")
         {
             Dead();
 
@@ -55,7 +55,7 @@ public class Character : MonoBehaviour
             r2d.gravityScale = 1;//2d 剛體.地心引力            
             r2d.AddForce(new Vector2(0,high));//剛體.推力(二維向量)
         }
-        r2d.SetRotation(30*r2d.velocity.y);
+        r2d.SetRotation(5*r2d.velocity.y);
         //print(r2d.velocity);
     }
     private void Dead()
